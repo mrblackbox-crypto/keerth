@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Music Storage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>My Music Storage</h1>
+      <p>Save your favorite tracks and keep them handy anywhere.</p>
+    </header>
+
+    <section class="form-card">
+      <h2>Add New Track</h2>
+      <form id="track-form">
+        <div class="form-row">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" placeholder="Song title" required>
+        </div>
+        <div class="form-row">
+          <label for="artist">Artist</label>
+          <input id="artist" name="artist" type="text" placeholder="Artist name" required>
+        </div>
+        <div class="form-row">
+          <label for="album">Album</label>
+          <input id="album" name="album" type="text" placeholder="Album (optional)">
+        </div>
+        <div class="form-row">
+          <label for="url">Stream URL</label>
+          <input id="url" name="url" type="url" placeholder="https://example.com/track.mp3">
+        </div>
+        <button type="submit">Save Track</button>
+      </form>
+    </section>
+
+    <section class="list-card">
+      <div class="list-card__header">
+        <h2>Stored Tracks</h2>
+        <button id="clear-all" class="ghost">Clear All</button>
+      </div>
+      <ul id="track-list"></ul>
+      <p id="empty-state" class="empty-state">No tracks saved yet.</p>
+    </section>
+  </div>
+
+  <template id="track-template">
+    <li class="track-item">
+      <div class="track-item__info">
+        <strong class="track-item__title"></strong>
+        <span class="track-item__meta"></span>
+        <a class="track-item__link" target="_blank" rel="noopener noreferrer">Listen</a>
+      </div>
+      <button class="delete-btn" title="Remove track">Remove</button>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
